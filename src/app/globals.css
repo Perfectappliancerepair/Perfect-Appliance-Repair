@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  body {
+    background-color: #f8fafc;
+    color: #0f172a;
+    overflow-x: hidden;
+    padding-bottom: 72px; /* For mobile sticky bottom bar */
+  }
+
+  @media (min-width: 768px) {
+    body {
+      padding-bottom: 0;
+    }
+  }
+}
+
+/* Custom Navy & Orange theme classes */
+:root {
+  --navy-dark: #0A192F;
+  --navy-main: #0F172A;
+  --navy-light: #1E293B;
+  --orange-primary: #FF6B00;
+  --orange-hover: #E05D00;
+  --orange-light: #FFF5EE;
+}
+
+/* Glassmorphism helpers */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Soft pulse glow effect */
+@keyframes softGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 107, 0, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(255, 107, 0, 0.65);
+  }
+}
+
+.animate-pulse-glow {
+  animation: softGlow 2.5s infinite ease-in-out;
+}
+
